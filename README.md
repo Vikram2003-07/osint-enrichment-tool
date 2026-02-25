@@ -4,17 +4,32 @@
 
 Automate threat intelligence enrichment by querying multiple OSINT APIs (VirusTotal, AbuseIPDB, IPGeolocation) to get reputation scores, geographic location, and abuse data for Indicators of Compromise (IOCs) like IP addresses and URLs/domains.
 
+## Sample Output
+```plaintext
+══════════════════════════════════════════════════════════════
+IOC : 185.220.101.34
+──────────────────────────────────────────────────────────────
+  📍 Location    : Nuremberg, Germany
+  🌐 ISP / Org   : Hetzner / Tor Exit Node
+  🛡  VT Malicious  : 14
+  🔴 Abuse Score    : 100%
+  ⚡ Risk Score     : 86 / 100
+  🏷  Severity      : CRITICAL
+  🚩 Verdict        : ⚠  TRUE POSITIVE
+══════════════════════════════════════════════════════════════
+```
+
 ## ✨ Features
 
 | Feature | Description |
 |---------|-------------|
-| **Multi-API Enrichment** | Queries VirusTotal, AbuseIPDB, and IPGeolocation in parallel |
-| **Risk Scoring Engine** | Weighted composite score (0-100) combining all data sources |
-| **True Positive Flagging** | Configurable threshold to flag high-risk IOCs |
-| **CSV Export** | Timestamped reports for ticket attachment and auditing |
-| **IP + URL Support** | Handles both IP addresses and URLs/domains |
-| **Rate Limit Handling** | Built-in delays and retry logic for API limits |
-| **Colorized Output** | Terminal-friendly color-coded results |
+| **🔗 Multi-API Enrichment** | Queries VirusTotal, AbuseIPDB, and IPGeolocation in parallel |
+| **⚡ Risk Scoring Engine** | Weighted composite score (0-100) combining all data sources |
+| **🚩 True Positive Flagging** | Configurable threshold to flag high-risk IOCs |
+| **📊 CSV Export** | Timestamped reports for ticket attachment and auditing |
+| **♾️ IP + URL Support** | Handles both IP addresses and URLs/domains |
+| **📈 Rate Limit Handling** | Built-in delays and retry logic for API limits |
+| **🎨 Colorized Output** | Terminal-friendly color-coded results |
 
 ## 📋 Requirements
 
@@ -50,17 +65,13 @@ source venv/bin/activate     # macOS/Linux
 # 4. Install dependencies
 pip install -r requirements.txt
 
-# 5. Configure API keys
-copy .env.example .env       # Windows
-cp .env.example .env         # macOS/Linux
-
-# 6. Edit .env with your API keys
+# 5. Edit .env with your API keys
 #    See Configuration section below
 
-# 7. Add IOCs to enrich
+# 6. Add IOCs to enrich
 #    Edit iocs.txt (one IOC per line)
 
-# 8. Run the tool
+# 7. Run the tool
 python osint_enrichment.py
 ```
 
