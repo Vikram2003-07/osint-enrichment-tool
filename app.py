@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-osint_enrichment.py
 ===================
 OSINT Enrichment Automation Tool — main entry point.
 
 Usage
 -----
-    python osint_enrichment.py                        # default: iocs.txt
+    python osint_enrichment.py     # default: iocs.txt
     python osint_enrichment.py -f my_indicators.txt
     python osint_enrichment.py -f iocs.csv --threshold 70
     python osint_enrichment.py --help

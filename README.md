@@ -72,7 +72,7 @@ pip install -r requirements.txt
 #    Edit iocs.txt (one IOC per line)
 
 # 7. Run the tool
-python osint_enrichment.py
+python app.py
 ```
 
 ## ⚙️ Configuration
@@ -113,22 +113,22 @@ https://evil.com,Known malware
 
 ```bash
 # Use default iocs.txt
-python osint_enrichment.py
+python app.py
 
 # Specify custom input file
-python osint_enrichment.py -f my_indicators.txt
+python app.py -f my_indicators.txt
 
 # Use CSV input
-python osint_enrichment.py -f iocs.csv
+python app.py -f iocs.csv
 
 # Override threshold
-python osint_enrichment.py -f iocs.txt --threshold 70
+python app.py -f iocs.txt --threshold 70
 
 # Skip CSV export (terminal only)
-python osint_enrichment.py -f iocs.txt --no-csv
+python app.py -f iocs.txt --no-csv
 
 # Specify output directory
-python osint_enrichment.py -f iocs.txt -o ./reports
+python app.py -f iocs.txt -o ./reports
 ```
 
 ### Command-Line Options
@@ -169,7 +169,7 @@ When the risk score meets or exceeds the threshold, the IOC is flagged as a **TR
 
 ```
 osint-enrichment/
-├── osint_enrichment.py   # Main entry point
+├── app.py   # Main entry point
 ├── api_clients.py        # API client implementations
 ├── scorer.py             # Risk scoring logic
 ├── reporter.py           # Output formatting & CSV export
